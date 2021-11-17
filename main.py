@@ -38,6 +38,8 @@ if __name__ == '__main__':
     # the below line ensures that when the button called 'Predict' is clicked,
     # the prediction function defined above is called to make the prediction
     # and store it in the variable result
+    extr = 0
+    intr = 0
     if st.button("Predict"):
         extr, intr = predict(text)
     st.success('The output is {}, {}'.format(extr, intr))
