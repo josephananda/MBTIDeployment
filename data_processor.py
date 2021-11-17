@@ -1,6 +1,9 @@
+import nltk
 import torch
 import torch.nn.functional as F
+import nltk
 from nltk.tokenize import word_tokenize
+nltk.download('all')
 
 def predict(text, model, max_len, vocab):
     """Memprediksi probabilitas seorang penulis (teks) ini introvert."""
