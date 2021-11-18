@@ -61,6 +61,7 @@ if __name__ == '__main__':
         'Pages',
         ('Home', 'About')
     )
+    st.sidebar.markdown('<p style="color:Black;"><b>Last Updated: 18-Nov-2021</b></p>', unsafe_allow_html=True)
 
     if select_pages == "Home":
         # the following lines create text boxes in which the user can enter
@@ -124,6 +125,6 @@ if __name__ == '__main__':
         st.markdown('<p style="color:Black;">Student Name: Joseph Ananda Sugihdharma</p>', unsafe_allow_html=True)
         st.markdown('<p style="color:Black;">Supervisor Name: Dr.Eng. Fitra Abdurrachman Bachtiar, S.T., M.Eng.</p>', unsafe_allow_html=True)
         st.text("")
-        st.markdown('<p style="color:Black;">This is a project for undergraduate thesis with a title of "Myers-Briggs Type Indicator (MBTI) Personality Model Classification in English Text using Convolutional Neural Network (CNN) Method"</p>', unsafe_allow_html = True)
+        st.markdown('<p style="color:Black;">This project is intended for undergraduate thesis with the title of "Myers-Briggs Type Indicator (MBTI) Personality Model Classification in English Text using Convolutional Neural Network (CNN) Method"</p>', unsafe_allow_html = True)
 
 
