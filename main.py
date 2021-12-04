@@ -56,13 +56,6 @@ def get_explanation(types):
         return "ISTPs are observant artisans with an understanding of mechanics and an interest in troubleshooting. They approach their environments with a flexible logic, looking for practical solutions to the problems at hand. They are independent and adaptable, and typically interact with the world around them in a self-directed, spontaneous manner."
 
 
-def get_question():
-    n = random.randint(0, 2)
-    question_list = ["What did you usually do after the lecture ends?", "What did you usually do during the weekend?",
-                     "Tell me one of your memorable moment at high school."]
-    return question_list[n]
-
-
 if __name__ == '__main__':
     # giving the webpage a title
     #st.sidebar.button("Home")
@@ -86,7 +79,7 @@ if __name__ == '__main__':
         # the following lines create text boxes in which the user can enter
         # the data required to make the prediction
         st.subheader("Questions")
-        question = get_question()
+        question = "What did you usually do after the lecture ends?"
         st.markdown(f'<p style="color:Black;"><b>{question}</b></p>',
                     unsafe_allow_html=True)
         text = st.text_area("Write your answer below", "")
