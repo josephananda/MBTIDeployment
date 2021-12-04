@@ -105,59 +105,59 @@ if __name__ == '__main__':
         # st.success(f"Intuition: {intuition:.2f}%, Sensing: {sensing:.2f}%")
         # st.success(f"Feeling: {feeling:.2f}%, Thinking: {thinking:.2f}%")
         # st.success(f"Judging: {judging:.2f}%, Perceiving: {perceiving:.2f}%")
-        if text != "":
-            if extrovert > introvert:
-                st.markdown(
-                    f'<p style="color:Black;"><b>Extrovert: {extrovert:.2f}%</b>, Introvert: {introvert:.2f}%</p>',
-                    unsafe_allow_html=True)
-                a = "E"
-            else:
-                st.markdown(
-                    f'<p style="color:Black;">Extrovert: {extrovert:.2f}%, <b>Introvert: {introvert:.2f}%</b></p>',
-                    unsafe_allow_html=True)
-                a = "I"
-
-            if intuition > sensing:
-                st.markdown(f'<p style="color:Black;"><b>Intuition: {intuition:.2f}%</b>, Sensing: {sensing:.2f}%</p>',
-                            unsafe_allow_html=True)
-                b = "N"
-            else:
-                st.markdown(f'<p style="color:Black;">Intuition: {intuition:.2f}%, <b>Sensing: {sensing:.2f}%</b></p>',
-                            unsafe_allow_html=True)
-                b = "S"
-
-            if feeling > thinking:
-                st.markdown(f'<p style="color:Black;"><b>Feeling: {feeling:.2f}%</b>, Thinking: {thinking:.2f}%</p>',
-                            unsafe_allow_html=True)
-                c = "F"
-            else:
-                st.markdown(f'<p style="color:Black;">Feeling: {feeling:.2f}%, <b>Thinking: {thinking:.2f}%</b></p>',
-                            unsafe_allow_html=True)
-                c = "T"
-
-            if intuition > sensing:
-                st.markdown(
-                    f'<p style="color:Black;"><b>Judging: {judging:.2f}%</b>, Perceiving: {perceiving:.2f}%</p>',
-                    unsafe_allow_html=True)
-                d = "J"
-            else:
-                st.markdown(
-                    f'<p style="color:Black;">Judging: {judging:.2f}%, <b>Perceiving: {perceiving:.2f}%</b></p>',
-                    unsafe_allow_html=True)
-                d = "P"
-
-            types = a + b + c + d
-            st.text("")
-            st.markdown(f'<p style="color:Black; font-size:20px">Your final label is: <b>{types}</b></p>',
+            if text != "":
+                if extrovert > introvert:
+                    st.markdown(
+                        f'<p style="color:Black;"><b>Extrovert: {extrovert:.2f}%</b>, Introvert: {introvert:.2f}%</p>',
                         unsafe_allow_html=True)
-            explanation = get_explanation(types)
-            st.text("")
-            st.markdown(f'<p style="color:Black;"><b>Explanation:</b></p>', unsafe_allow_html=True)
-            st.markdown(f'<p style="color:Black;">{explanation}</p>', unsafe_allow_html=True)
-            end_time = time.time()
-            st.markdown(f'<p style="color:Black">Elapsed Time: <b>{end_time-start_time:.3f} Seconds</b></p>',
+                    a = "E"
+                else:
+                    st.markdown(
+                        f'<p style="color:Black;">Extrovert: {extrovert:.2f}%, <b>Introvert: {introvert:.2f}%</b></p>',
                         unsafe_allow_html=True)
-        else:
-            st.error("Please fill out the answer box!")
+                    a = "I"
+
+                if intuition > sensing:
+                    st.markdown(f'<p style="color:Black;"><b>Intuition: {intuition:.2f}%</b>, Sensing: {sensing:.2f}%</p>',
+                                unsafe_allow_html=True)
+                    b = "N"
+                else:
+                    st.markdown(f'<p style="color:Black;">Intuition: {intuition:.2f}%, <b>Sensing: {sensing:.2f}%</b></p>',
+                                unsafe_allow_html=True)
+                    b = "S"
+
+                if feeling > thinking:
+                    st.markdown(f'<p style="color:Black;"><b>Feeling: {feeling:.2f}%</b>, Thinking: {thinking:.2f}%</p>',
+                                unsafe_allow_html=True)
+                    c = "F"
+                else:
+                    st.markdown(f'<p style="color:Black;">Feeling: {feeling:.2f}%, <b>Thinking: {thinking:.2f}%</b></p>',
+                                unsafe_allow_html=True)
+                    c = "T"
+
+                if intuition > sensing:
+                    st.markdown(
+                        f'<p style="color:Black;"><b>Judging: {judging:.2f}%</b>, Perceiving: {perceiving:.2f}%</p>',
+                        unsafe_allow_html=True)
+                    d = "J"
+                else:
+                    st.markdown(
+                        f'<p style="color:Black;">Judging: {judging:.2f}%, <b>Perceiving: {perceiving:.2f}%</b></p>',
+                        unsafe_allow_html=True)
+                    d = "P"
+
+                types = a + b + c + d
+                st.text("")
+                st.markdown(f'<p style="color:Black; font-size:20px">Your final label is: <b>{types}</b></p>',
+                            unsafe_allow_html=True)
+                explanation = get_explanation(types)
+                st.text("")
+                st.markdown(f'<p style="color:Black;"><b>Explanation:</b></p>', unsafe_allow_html=True)
+                st.markdown(f'<p style="color:Black;">{explanation}</p>', unsafe_allow_html=True)
+                end_time = time.time()
+                st.markdown(f'<p style="color:Black">Elapsed Time: <b>{end_time-start_time:.3f} Seconds</b></p>',
+                            unsafe_allow_html=True)
+            else:
+                st.error("Please fill out the answer box!")
 
 
