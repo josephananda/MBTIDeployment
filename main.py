@@ -2,6 +2,7 @@ import streamlit as st
 import torch
 import json
 import time
+import random
 
 import data_processor
 
@@ -55,6 +56,13 @@ def get_explanation(types):
         return "ISTPs are observant artisans with an understanding of mechanics and an interest in troubleshooting. They approach their environments with a flexible logic, looking for practical solutions to the problems at hand. They are independent and adaptable, and typically interact with the world around them in a self-directed, spontaneous manner."
 
 
+def shuffle_question():
+    n = random.randint(0, 2)
+    question_list = ["What did you usually do after the lecture ends?", "What did you usually do during the weekend?",
+                     "Tell me one of your memorable moment at high school."]
+    return question_list[n]
+
+
 if __name__ == '__main__':
     # giving the webpage a title
     #st.sidebar.button("Home")
@@ -78,7 +86,8 @@ if __name__ == '__main__':
         # the following lines create text boxes in which the user can enter
         # the data required to make the prediction
         st.subheader("Questions")
-        st.markdown('<p style="color:Black;"><b>What did you usually do after the lecture ends?</b></p>',
+        question = "What did you usually do after the lecture ends?"
+        st.markdown(f'<p style="color:Black;"><b>{question}</b></p>',
                     unsafe_allow_html=True)
         text = st.text_area("Write your answer below", "")
         extrovert = 0
@@ -89,6 +98,8 @@ if __name__ == '__main__':
         thinking = 0
         judging = 0
         perceiving = 0
+        if st.button("Shuffle Question"):
+            question = shuffle_question()
         if st.button("Predict"):
             start_time = time.time()
             extrovert, introvert, intuition, sensing, feeling, thinking, judging, perceiving = predict(text)
