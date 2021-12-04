@@ -68,6 +68,7 @@ if __name__ == '__main__':
         st.markdown('<p style="color:Black;">Supervisor Name: Dr.Eng. Fitra Abdurrachman Bachtiar, S.T., M.Eng.</p>', unsafe_allow_html=True)
         st.text("")
         st.markdown('<p style="color:Black;">This project is intended for undergraduate thesis with the title of "Myers-Briggs Type Indicator (MBTI) Personality Model Classification in English Text using Convolutional Neural Network (CNN) Method"</p>', unsafe_allow_html = True)
+        st.markdown('<p style="color:Black;">The Myers-Briggs Type Indicator (MBTI) is a personality model developed by Katharine Cooks Briggs and Isabel Briggs Myers in 1940. The MBTI personality displays a combination of preferences from four different domains. As many as 80 percent of the top 500 companies and 89 percent of the top 100 companies in the United States use the MBTI personality test in the recruitment process. Generally, test takers need to answer about 50 to 70 questions and it is relatively expensive to know MBTI personality. To solve this problem, the researcher developed a personality classification system using the Convolutional Neural Network (CNN) methods and GloVe (Global Vectors for Word Representation) word embedding."</p>', unsafe_allow_html = True)
         st.markdown('<p style="color:Black;"><b>Last Updated: 04-Des-2021</b></p>', unsafe_allow_html=True)
 
     if select_pages == "MBTI Predictor":
