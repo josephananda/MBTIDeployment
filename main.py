@@ -1,6 +1,8 @@
 import streamlit as st
 import torch
 import json
+import time
+
 import data_processor
 
 def predict(text):
@@ -88,6 +90,7 @@ if __name__ == '__main__':
         judging = 0
         perceiving = 0
         if st.button("Predict"):
+            start_time = time.time()
             extrovert, introvert, intuition, sensing, feeling, thinking, judging, perceiving = predict(text)
         # st.success(f"Extrovert: {extrovert:.2f}%, Introvert: {introvert:.2f}%")
         # st.success(f"Intuition: {intuition:.2f}%, Sensing: {sensing:.2f}%")
@@ -142,4 +145,8 @@ if __name__ == '__main__':
             st.text("")
             st.markdown(f'<p style="color:Black;"><b>Explanation:</b></p>', unsafe_allow_html=True)
             st.markdown(f'<p style="color:Black;">{explanation}</p>', unsafe_allow_html=True)
+            end_time = time.time()
+            st.markdown(f'<p style="color:Black; font-size:20px">Elapsed Time: <b>{end_time-start_time}</b></p>',
+                        unsafe_allow_html=True)
+
 
