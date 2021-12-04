@@ -146,7 +146,7 @@ if __name__ == '__main__':
             st.markdown(f'<p style="color:Black;"><b>Explanation:</b></p>', unsafe_allow_html=True)
             st.markdown(f'<p style="color:Black;">{explanation}</p>', unsafe_allow_html=True)
             end_time = time.time()
-            st.markdown(f'<p style="color:Black; font-size:20px">Elapsed Time: <b>{end_time-start_time}</b></p>',
+            st.markdown(f'<p style="color:Black">Elapsed Time: <b>{end_time-start_time:.3f} Seconds</b></p>',
                         unsafe_allow_html=True)
 
 
