@@ -59,15 +59,23 @@ if __name__ == '__main__':
     st.title("MBTI Type Predictor")
     select_pages = st.sidebar.selectbox(
         'Pages',
-        ('Home', 'About')
+        ('Home', 'MBTI Predictor')
     )
-    st.sidebar.markdown('<p style="color:Black;"><b>Last Updated: 18-Nov-2021</b></p>', unsafe_allow_html=True)
 
     if select_pages == "Home":
+        st.subheader("About This Project")
+        st.markdown('<p style="color:Black;">Student Name: Joseph Ananda Sugihdharma</p>', unsafe_allow_html=True)
+        st.markdown('<p style="color:Black;">Supervisor Name: Dr.Eng. Fitra Abdurrachman Bachtiar, S.T., M.Eng.</p>', unsafe_allow_html=True)
+        st.text("")
+        st.markdown('<p style="color:Black;">This project is intended for undergraduate thesis with the title of "Myers-Briggs Type Indicator (MBTI) Personality Model Classification in English Text using Convolutional Neural Network (CNN) Method"</p>', unsafe_allow_html = True)
+        st.markdown('<p style="color:Black;"><b>Last Updated: 04-Des-2021</b></p>', unsafe_allow_html=True)
+
+    if select_pages == "MBTI Predictor":
         # the following lines create text boxes in which the user can enter
         # the data required to make the prediction
         st.subheader("Questions")
-        st.markdown('<p style="color:Black;"><b>What did you usually do after the lecture ends?</b></p>', unsafe_allow_html=True)
+        st.markdown('<p style="color:Black;"><b>What did you usually do after the lecture ends?</b></p>',
+                    unsafe_allow_html=True)
         text = st.text_area("Write your answer below", "")
         extrovert = 0
         introvert = 0
@@ -79,52 +87,57 @@ if __name__ == '__main__':
         perceiving = 0
         if st.button("Predict"):
             extrovert, introvert, intuition, sensing, feeling, thinking, judging, perceiving = predict(text)
-        #st.success(f"Extrovert: {extrovert:.2f}%, Introvert: {introvert:.2f}%")
-        #st.success(f"Intuition: {intuition:.2f}%, Sensing: {sensing:.2f}%")
-        #st.success(f"Feeling: {feeling:.2f}%, Thinking: {thinking:.2f}%")
-        #st.success(f"Judging: {judging:.2f}%, Perceiving: {perceiving:.2f}%")
+        # st.success(f"Extrovert: {extrovert:.2f}%, Introvert: {introvert:.2f}%")
+        # st.success(f"Intuition: {intuition:.2f}%, Sensing: {sensing:.2f}%")
+        # st.success(f"Feeling: {feeling:.2f}%, Thinking: {thinking:.2f}%")
+        # st.success(f"Judging: {judging:.2f}%, Perceiving: {perceiving:.2f}%")
         if text != "":
             if extrovert > introvert:
-                st.markdown(f'<p style="color:Black;"><b>Extrovert: {extrovert:.2f}%</b>, Introvert: {introvert:.2f}%</p>', unsafe_allow_html=True)
+                st.markdown(
+                    f'<p style="color:Black;"><b>Extrovert: {extrovert:.2f}%</b>, Introvert: {introvert:.2f}%</p>',
+                    unsafe_allow_html=True)
                 a = "E"
             else:
-                st.markdown(f'<p style="color:Black;">Extrovert: {extrovert:.2f}%, <b>Introvert: {introvert:.2f}%</b></p>',unsafe_allow_html=True)
+                st.markdown(
+                    f'<p style="color:Black;">Extrovert: {extrovert:.2f}%, <b>Introvert: {introvert:.2f}%</b></p>',
+                    unsafe_allow_html=True)
                 a = "I"
 
             if intuition > sensing:
-                st.markdown(f'<p style="color:Black;"><b>Intuition: {intuition:.2f}%</b>, Sensing: {sensing:.2f}%</p>', unsafe_allow_html=True)
+                st.markdown(f'<p style="color:Black;"><b>Intuition: {intuition:.2f}%</b>, Sensing: {sensing:.2f}%</p>',
+                            unsafe_allow_html=True)
                 b = "N"
             else:
-                st.markdown(f'<p style="color:Black;">Intuition: {intuition:.2f}%, <b>Sensing: {sensing:.2f}%</b></p>', unsafe_allow_html=True)
+                st.markdown(f'<p style="color:Black;">Intuition: {intuition:.2f}%, <b>Sensing: {sensing:.2f}%</b></p>',
+                            unsafe_allow_html=True)
                 b = "S"
 
             if feeling > thinking:
-                st.markdown(f'<p style="color:Black;"><b>Feeling: {feeling:.2f}%</b>, Thinking: {thinking:.2f}%</p>', unsafe_allow_html=True)
+                st.markdown(f'<p style="color:Black;"><b>Feeling: {feeling:.2f}%</b>, Thinking: {thinking:.2f}%</p>',
+                            unsafe_allow_html=True)
                 c = "F"
             else:
-                st.markdown(f'<p style="color:Black;">Feeling: {feeling:.2f}%, <b>Thinking: {thinking:.2f}%</b></p>', unsafe_allow_html=True)
+                st.markdown(f'<p style="color:Black;">Feeling: {feeling:.2f}%, <b>Thinking: {thinking:.2f}%</b></p>',
+                            unsafe_allow_html=True)
                 c = "T"
 
             if intuition > sensing:
-                st.markdown(f'<p style="color:Black;"><b>Judging: {judging:.2f}%</b>, Perceiving: {perceiving:.2f}%</p>', unsafe_allow_html=True)
+                st.markdown(
+                    f'<p style="color:Black;"><b>Judging: {judging:.2f}%</b>, Perceiving: {perceiving:.2f}%</p>',
+                    unsafe_allow_html=True)
                 d = "J"
             else:
-                st.markdown(f'<p style="color:Black;">Judging: {judging:.2f}%, <b>Perceiving: {perceiving:.2f}%</b></p>', unsafe_allow_html=True)
+                st.markdown(
+                    f'<p style="color:Black;">Judging: {judging:.2f}%, <b>Perceiving: {perceiving:.2f}%</b></p>',
+                    unsafe_allow_html=True)
                 d = "P"
 
             types = a + b + c + d
             st.text("")
-            st.markdown(f'<p style="color:Black; font-size:20px">Your final label is: <b>{types}</b></p>', unsafe_allow_html=True)
+            st.markdown(f'<p style="color:Black; font-size:20px">Your final label is: <b>{types}</b></p>',
+                        unsafe_allow_html=True)
             explanation = get_explanation(types)
             st.text("")
             st.markdown(f'<p style="color:Black;"><b>Explanation:</b></p>', unsafe_allow_html=True)
             st.markdown(f'<p style="color:Black;">{explanation}</p>', unsafe_allow_html=True)
-
-    if select_pages == "About":
-        st.subheader("About This Project")
-        st.markdown('<p style="color:Black;">Student Name: Joseph Ananda Sugihdharma</p>', unsafe_allow_html=True)
-        st.markdown('<p style="color:Black;">Supervisor Name: Dr.Eng. Fitra Abdurrachman Bachtiar, S.T., M.Eng.</p>', unsafe_allow_html=True)
-        st.text("")
-        st.markdown('<p style="color:Black;">This project is intended for undergraduate thesis with the title of "Myers-Briggs Type Indicator (MBTI) Personality Model Classification in English Text using Convolutional Neural Network (CNN) Method"</p>', unsafe_allow_html = True)
-
 
