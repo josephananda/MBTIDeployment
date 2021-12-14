@@ -73,7 +73,7 @@ if __name__ == '__main__':
         st.text("")
         st.markdown('<p style="color:Black;">Student Name: Joseph Ananda Sugihdharma</p>', unsafe_allow_html=True)
         st.markdown('<p style="color:Black;">Supervisor Name: Dr.Eng. Fitra Abdurrachman Bachtiar, S.T., M.Eng.</p>', unsafe_allow_html=True)
-        st.markdown('<p style="color:Black;"><b>Last Updated: 04-Des-2021</b></p>', unsafe_allow_html=True)
+        st.markdown('<p style="color:Black;"><b>Last Updated: 14-Des-2021</b></p>', unsafe_allow_html=True)
 
     if select_pages == "MBTI Predictor":
         # the following lines create text boxes in which the user can enter
@@ -128,7 +128,7 @@ if __name__ == '__main__':
                                 unsafe_allow_html=True)
                     c = "T"
 
-                if intuition > sensing:
+                if judging > perceiving:
                     st.markdown(
                         f'<p style="color:Black;"><b>Judging: {judging:.2f}%</b>, Perceiving: {perceiving:.2f}%</p>',
                         unsafe_allow_html=True)
