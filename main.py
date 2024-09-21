@@ -71,6 +71,7 @@ if __name__ == '__main__':
         st.text("")
         st.markdown('<p style="color:Black;">This project is intended for undergraduate thesis with the title of "Myers-Briggs Type Indicator (MBTI) Personality Model Classification in English Text using Convolutional Neural Network (CNN) Method".</p>', unsafe_allow_html = True)
         st.text("")
+        st.markdown('<p style="color:Black;">Student Name: Joseph A. S.</p>', unsafe_allow_html=True)
         st.markdown('<p style="color:Black;"><b>Last Updated: 14-Des-2021</b></p>', unsafe_allow_html=True)
 
     if select_pages == "MBTI Predictor":
